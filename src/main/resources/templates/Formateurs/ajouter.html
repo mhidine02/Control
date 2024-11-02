@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajouter Formateur</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+  <!-- Nouveau conteneur pour le titre -->
+  <div class="col-12">
+    <div class="bg-light rounded d-flex align-items-center justify-content-center p-4 w-100">
+      <h1 class="text-center mb-0" style="font-size: 2rem; font-weight: bold;">Ajouter un Formateur</h1>
+    </div>
+
+  <form th:action="@{/formateurs/ajouter}" th:object="${formateur}" method="post" class="mt-4">
+    <div class="form-group">
+      <label for="nom">Nom</label>
+      <input type="text" id="nom" name="nom" class="form-control" th:field="*{nom}" placeholder="Nom du formateur" required>
+    </div>
+
+    <div class="form-group">
+      <label for="expertise">Expertise</label>
+      <input type="text" id="expertise" name="expertise" class="form-control" th:field="*{expertise}" placeholder="Expertise du formateur" required>
+    </div>
+
+    <div class="text-center mt-4">
+      <button type="submit" class="btn btn-primary btn-lg">Enregistrer</button>
+      <a href="/formateurs" class="btn btn-secondary btn-lg ml-3"><i class="fa fa-arrow-left"></i> Annuler</a>
+    </div>
+  </form>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
